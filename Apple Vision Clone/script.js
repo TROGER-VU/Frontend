@@ -42,3 +42,37 @@ gsap.to("#page1>video",{
         document.querySelector("#page1>video").play()
     }
 })
+
+gsap.to("#page", {
+  scrollTrigger: {
+    trigger: `#page`,
+    start: `top top`,
+    end: `bottom top`,
+    scroller: `#main`,
+    pin: true
+  }
+})
+
+gsap.to("#page-bottom", {
+  scrollTrigger: {
+    trigger: `#page-bottom`,
+    start: `5% top`,
+    end: `bottom top`,
+    scroller: `#main`,
+  },
+  opacity: 0
+})
+
+var t1 = gsap.timeline({
+  scrollTrigger:{
+    trigger: `#page2`,
+    start: `top top`,
+    scrub: 1,
+    scroller: `#main`,
+    pin: true
+  }
+})
+
+t1.to("#page2>h1",{
+  top: `-50%`
+})
